@@ -13,5 +13,23 @@ li {
     padding: 4px; 
     text-align: left;
     border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     
+}
+.activity-list {
+    margin:0;
+}
+
+li button {
+    margin: 0; 
+    background-color: transparent;
+    border: 0;
+    transform: rotate(45deg); 
+    font-size: large;
+}
+li button:hover {
+    color: lightcoral;
+    transform: rotate(90deg);
 }

@@ -32,7 +32,7 @@ export default function Form({onAddActivity}) {
             id="weather-checkbox"
           ></input>
         </div>
-          <button type="submit">SUBMIT</button>
+          <button className="submit"type="submit">SUBMIT</button>
         </main>
       </form>
     );
