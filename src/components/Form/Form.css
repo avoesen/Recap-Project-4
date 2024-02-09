@@ -1,6 +1,4 @@
-form {
-    /* max-width: 20rem; */
-}
+
 header {
     display: flex; 
     margin-left: 6rem;
@@ -23,7 +21,7 @@ input {
     align-self: flex-end;
     margin-left: 2px; 
 }
-button {
+.submit {
     width: 4rem; 
     margin-top: 2rem;
     background-color: lightcoral;

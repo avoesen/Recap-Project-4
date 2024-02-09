@@ -28,34 +28,26 @@ function App() {
     }
     fetchWeather()
    }, [])
+
+   function handleDeleteActivity(id) {
+    const deleteActivities = activities.filter((activity) => activity.id !== id)
+    // console.log(deleteActivities)
+    setActivities(deleteActivities)
+   }
   
   return (
     <div className="App">
-      <>
-        {weather ? (
-          <>
-            <h1>
-              {condition} {temperature}°C
-            </h1>
-            <p>go outside the API is trolling you</p>
-            <List activities={goodWeatherActivities} />
-          </>
-        ) : (
-          <>
-            <h1>
-              {condition} {temperature}°C
-            </h1>
-            <p>stay inside and do something like:</p>
-            <List activities={badWeatherActivities} />
-          </>
-        )}
-      </>
-
+      <List
+              goodWeatherActivities={goodWeatherActivities}
+              badWeatherActivities={badWeatherActivities}
+              condition={condition}
+              temperature={temperature}
+              weather={weather}
+              onDeleteActivity={handleDeleteActivity}
+            />
       <Form onAddActivity={handleAddActivity} />
     </div>
   );
 }
 
 export default App;
-
-// if weather is good show first List if not show second  
