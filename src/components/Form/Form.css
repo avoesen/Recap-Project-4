@@ -1,0 +1,15 @@
+header {
+    display: flex; 
+    margin-left: 6rem;
+}
+main {
+    display: flex; 
+    flex-direction: column;
+    align-items: start;
+    margin-left: 6rem;
+}
+
+button {
+    width: 4rem; 
+    margin-top: 2rem;
+}
