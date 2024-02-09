@@ -27,6 +27,8 @@ function App() {
       setCondition(data.condition)
     }
     fetchWeather()
+    const interval = setInterval(fetchWeather, 5000)
+    return () => clearInterval(interval)
    }, [])
 
    function handleDeleteActivity(id) {
