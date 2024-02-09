@@ -1,0 +1,17 @@
+ul{
+    margin-left: 6rem;
+    margin-right: 6rem;
+    list-style-type: none;
+    padding: 0; 
+    max-width: 20rem;
+}
+
+li {
+    background-color: lightgrey;
+    margin-top: 1rem;
+    border: 1px solid black;
+    padding: 4px; 
+    text-align: left;
+    border-radius: 4px;
+    
+}
