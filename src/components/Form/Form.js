@@ -5,15 +5,13 @@ export default function Form({onAddActivity}) {
         event.preventDefault();
         const formData = new FormData(event.target); 
         const data = Object.fromEntries(formData);
-        const form = event.target
-        console.log(data)
-      
         const isForGoodWeather = data.isForGoodWeather === "on";
 
         const newActivity = {name: data.name, isForGoodWeather: isForGoodWeather}
         onAddActivity(newActivity)
 
-        form.reset()
+        event.target.reset()
+        event.target.name.focus()
     }
     return (
       <form className="form" onSubmit={handleSubmit}>

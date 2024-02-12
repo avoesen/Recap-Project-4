@@ -13,7 +13,7 @@ function App() {
    const [timer, setTimer] = useState(5)
 
    function handleAddActivity(newActivity) {
-      setActivities([{...newActivity, id: uid()}, ...activities])
+      setActivities([ ...activities, {...newActivity, id: uid()}])
    }
    
    const filteredWeatherActivities = activities.filter((activity) => activity.isForGoodWeather === weather)
@@ -32,6 +32,7 @@ function App() {
     const refreshInterval = setInterval(() => {
       setTimer((seconds) => seconds - 1);
     }, 1000);
+
     return () =>{ 
       clearInterval(interval);
       clearInterval(refreshInterval);
@@ -39,19 +40,18 @@ function App() {
    }, [])
 
    function handleDeleteActivity(id) {
-    const deleteActivities = activities.filter((activity) => activity.id !== id)
-    setActivities(deleteActivities)
+    setActivities(activities.filter((activity) => activity.id !== id))
    }
   
   return (
     <div className="App">
       <List
-              activities={filteredWeatherActivities}
-              condition={condition}
-              temperature={temperature}
-              weather={weather}
-              onDeleteActivity={handleDeleteActivity}
-            />
+        activities={filteredWeatherActivities}
+        condition={condition}
+        temperature={temperature}
+        weather={weather}
+        onDeleteActivity={handleDeleteActivity}
+      />
       <Form onAddActivity={handleAddActivity} />
       <span>change the weather in ...{timer} sec</span>
     </div>
