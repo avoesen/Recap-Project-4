@@ -6,8 +6,9 @@ export default function Form({onAddActivity}) {
         const formData = new FormData(event.target); 
         const data = Object.fromEntries(formData);
         const form = event.target
+        console.log(data)
       
-        const isForGoodWeather = data.isForGoodWeather === "on"? true : false;
+        const isForGoodWeather = data.isForGoodWeather === "on";
 
         const newActivity = {name: data.name, isForGoodWeather: isForGoodWeather}
         onAddActivity(newActivity)
@@ -20,19 +21,21 @@ export default function Form({onAddActivity}) {
           <h2>Add new Activity:</h2>
         </header>
         <main>
-            <div>            
-                <label htmlFor="activity">Name of activity:</label>
-                <input name="name" type="text" id="activity"></input>
-            </div> 
-         <div>
-          <label htmlFor="weather-checkbox">Good-weather activity:</label>
-          <input
-            name="isForGoodWeather"
-            type="checkbox"
-            id="weather-checkbox"
-          ></input>
-        </div>
-          <button className="submit"type="submit">SUBMIT</button>
+          <div className="form-insert">
+            <label htmlFor="activity">Name of activity:</label>
+            <input name="name" type="text" id="activity"></input>
+          </div>
+          <div className="form-insert">
+            <label htmlFor="weather-checkbox">Good-weather activity:</label>
+            <input
+              name="isForGoodWeather"
+              type="checkbox"
+              id="weather-checkbox"
+            ></input>
+          </div>
+          <button className="submit" type="submit">
+            SUBMIT
+          </button>
         </main>
       </form>
     );

@@ -39,3 +39,8 @@ h1, p {
     transform: rotate(360deg);
   }
 }
+span {
+  display: flex;
+  margin-top: 1rem; 
+  margin-left: 6rem; 
+}

@@ -1,25 +1,37 @@
-
-header {
-    display: flex; 
+form {
+    padding:1rem; 
     margin-left: 6rem;
+    background-color: lightcyan;
+    margin-right: 6rem; 
+    border: 2px solid lightcoral; 
+    border-radius: 8px;
+    display:flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 main {
     display: flex; 
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    margin-left: 6rem;
     max-width: 20rem;
     height: 100%;
     flex-grow: 1;
 }
 
-div {
+.form-insert {
     margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
 }
 input {
     align-self: flex-end;
-    margin-left: 2px; 
+    margin: 0; 
 }
 .submit {
     width: 4rem; 
@@ -28,4 +40,5 @@ input {
     border: 2px solid black; 
     border-radius: 4px;
     padding: 4px;
+    align-self: center;
 }
